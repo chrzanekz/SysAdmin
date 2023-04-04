@@ -1,0 +1,5 @@
+all:
+  hosts:
+    mysql:
+      ansible_host: 10.0.1.105
+      ansible_ssh_pass: Parasolka5

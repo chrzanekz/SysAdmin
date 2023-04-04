@@ -1,0 +1,56 @@
+---
+- hosts: mysql
+
+  vars:
+    mysql_root_password: Parasolka5
+
+  tasks:
+    - name: Instalacja mysql
+      dnf:
+        name: mysql-server
+        state: present
+    - name: Włącz Usługę
+      service: name=mysqld state=started enabled=yes
+    - name: Zaktualizuj dane konta
+      no_log: true
+      mysql_user:
+        name: root
+        host: "{{ item }}"
+        password: "{{ mysql_root_password }}"
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        check_implicit_admin: yes
+        priv: "*.*:ALL,GRANT"
+      with_items:
+      - "{{ ansible_hostname }}"
+      - 127.0.0.1
+      - ::1
+      - localhost
+    - name: Stwórz nową bazę
+      mysql_db: name=matrix state=present login_user=root login_password="{{ mysql_root_password }}"
+    - name: Skopiuj schemat
+      copy: src=/usr/bazadanych/matrix.sql dest=/tmp/matrix.sql
+    - name: Umieść przykładowe dane w bazie
+      mysql_db: name=matrix state=import target=/tmp/matrix.sql login_user=root login_password="{{ mysql_root_password }}"
+    - name: Instalacja Perl
+      ansible.builtin.command: sudo dnf install -y wget perl perl-Net-SSLeay openssl unzip perl-Encode-Detect perl-Data-Dumper
+    - name: Pobierz Klucz
+      ansible.builtin.command: wget https://download.webmin.com/jcameron-key.asc
+    - name: Importuj Klucz
+      ansible.builtin.command: sudo rpm --import jcameron-key.asc
+    - name: Pobierz Webmin
+      ansible.builtin.command: wget https://prdownloads.sourceforge.net/webadmin/webmin-1.970-1.noarch.rpm
+    - name: Instalacja Webmin
+      ansible.builtin.command: sudo rpm -Uvh webmin-1.970-1.noarch.rpm
+      ignore_errors: yes
+    - name: Odblokuj port
+      ansible.builtin.command: sudo firewall-cmd --add-port=10000/tcp --zone=public --permanent
+    - name: Przeładuj Firewalla
+      ansible.builtin.command: sudo  firewall-cmd --reload
+    - lineinfile:
+        path: /etc/login.defs
+        state: present
+        regexp: 'PASS_MAX_DAYS\t99999'
+        line: 'PASS_MAX_DAYS  30'
+        backup: yes
+      become: true

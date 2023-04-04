@@ -1,0 +1,10 @@
+---
+- hosts: mysql
+  tasks:
+    - lineinfile:
+        path: /etc/login.defs
+        state: present
+        regexp: 'PASS_MAX_DAYS\t99999'
+        line: 'PASS_MAX_DAYS  30'
+        backup: yes
+      become: true
