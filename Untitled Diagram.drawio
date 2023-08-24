@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" modified="2023-08-24T08:15:07.007Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 OPR/101.0.0.0" etag="CRHimnWcBRfN0BFKWc_Y" version="21.6.8" type="github">
+  <diagram name="Page-1" id="c37626ed-c26b-45fb-9056-f9ebc6bb27b6">
+    <mxGraphModel dx="1393" dy="1639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1c7a67bf8fd3230f-15" target="KZwi-NXesEsp3sp7ZXLx-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1c7a67bf8fd3230f-15" value="Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=0;shadow=0;comic=0;strokeWidth=1;fontFamily=Verdana;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1020" y="-560" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.12;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KZwi-NXesEsp3sp7ZXLx-1" target="KZwi-NXesEsp3sp7ZXLx-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.88;exitY=0.9;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="KZwi-NXesEsp3sp7ZXLx-1" target="KZwi-NXesEsp3sp7ZXLx-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-1" value="Główny Router&lt;br&gt;192.168.0.99" style="shape=mxgraph.cisco.routers.router;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1006" y="-230" width="78" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KZwi-NXesEsp3sp7ZXLx-2" target="KZwi-NXesEsp3sp7ZXLx-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-2" value="Maszt radiowy&lt;br&gt;" style="shape=mxgraph.cisco.wireless.antenna;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1026" y="-425" width="88" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-5" value="Most bezprzewodowy w kierunku&lt;br&gt;budynku administracyjnego" style="shape=mxgraph.cisco.wireless.wireless_bridge;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="833" y="-120" width="75" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="KZwi-NXesEsp3sp7ZXLx-6" value="Most bezprzewodowy w kierunku&lt;br&gt;sterownii" style="shape=mxgraph.cisco.wireless.wireless_bridge;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1206" y="-120" width="75" height="61" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
